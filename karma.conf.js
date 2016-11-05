@@ -22,6 +22,7 @@ module.exports = function (config) {
 			"app/assets/components/angular-animate/angular-animate.js",
 			"app/assets/components/angular-aria/angular-aria.js",
 			"app/assets/components/angular-messages/angular-messages.js",
+			"app/assets/components/angular-mocks/angular-mocks.js",
 			"app/assets/components/angular-material/angular-material.js",
 			// endinject
 
@@ -37,7 +38,7 @@ module.exports = function (config) {
 		// preprocess matching files before serving them to the browser
 		// available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
 		preprocessors: {
-			'app/assets/js/*.js': 'coverage'
+			'app/assets/js/*.js': ['coverage']
 		},
 
 
