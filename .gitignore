@@ -3,3 +3,4 @@ app/assets/components
 app/assets/css/*.css
 app/assets/js/*.js
 .idea/*.*
+coverage
