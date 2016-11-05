@@ -3,9 +3,10 @@
 
 	HomeRoute.$inject = ['$stateProvider'];
 
-	angular.module('genie')
+	angular
+		.module('genie')
 		.config(HomeRoute);
-	
+
 	function HomeRoute($stateProvider) {
 		$stateProvider
 			.state('app.home', {

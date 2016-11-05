@@ -3,7 +3,8 @@
 
 	appReady.$inject = ['$state'];
 
-	angular.module('genie')
+	angular
+		.module('genie')
 		.run(appReady);
 
 	function appReady ($state) {

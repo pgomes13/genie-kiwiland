@@ -3,7 +3,8 @@
 
 	routes.$inject = ['$stateProvider'];
 
-	angular.module('genie')
+	angular
+		.module('genie')
 		.config(routes);
 
 
