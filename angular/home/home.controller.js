@@ -19,7 +19,9 @@
 		 * @param $fileContent
 		 */
 		function showResults ($fileContent) {
-			showResultsBar ($fileContent);
+			var graphs = $fileContent.split(',').map((graph) => {
+				return graph.trim();
+			});
 		}
 
 		function showResultsBar (data) {
