@@ -1,14 +1,14 @@
 (function () {
 	'use strict';
 
-	HomeController.$inject = ['$mdDialog'];
+	HomeController.$inject = ['$mdDialog', 'ResultFactory'];
 
 	angular
 		.module('genie')
 		.controller('HomeController', HomeController);
 
 
-	function HomeController($mdDialog) {
+	function HomeController($mdDialog, ResultFactory) {
 		const home = this;
 
 		// initialise the functions when the controller loads
@@ -19,9 +19,8 @@
 		 * @param $fileContent
 		 */
 		function showResults ($fileContent) {
-			var graphs = $fileContent.split(',').map((graph) => {
-				return graph.trim();
-			});
+			var results = new ResultFactory($fileContent);
+			results.test();
 		}
 
 		function showResultsBar (data) {

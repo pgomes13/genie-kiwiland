@@ -1,20 +1,18 @@
 (function () {
 	'use strict';
 
-	NodeFactory.$inject = [''];
-
 	angular
 		.module('genie')
 		.factory('NodeFactory', NodeFactory);
 
-	function NodeFactory () {
+	function NodeFactory() {
 
 		/**
 		 * @param name
 		 * A string representing node name
 		 * @constructor
 		 */
-		var Node = function(name) {
+		var Node = function (name) {
 			this.name = '';
 			this.routes = new Map();
 
@@ -26,7 +24,7 @@
 		 * Adds a route for this node
 		 * @param route
 		 */
-		Node.prototype.set = function(route) {
+		Node.prototype.set = function (route) {
 			if (route) {
 				if (route.destination && route.weight) {
 					var destinationName = route.destination.name;
@@ -40,7 +38,7 @@
 		 * @param destination
 		 * @returns {V}
 		 */
-		Node.prototype.get = function(destination) {
+		Node.prototype.get = function (destination) {
 			if (destination) {
 				if (destination.name) {
 					return this.routes.get(destination.name);
@@ -52,7 +50,7 @@
 		 * Removes route to destination
 		 * @param destination
 		 */
-		Node.prototype.del = function(destination) {
+		Node.prototype.del = function (destination) {
 			if (destination) {
 				if (destination.name) {
 					this.routes.delete(destination.name);
@@ -60,6 +58,7 @@
 			}
 		};
 
+		return Node;
 	}
 
 
