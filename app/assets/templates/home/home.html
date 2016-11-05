@@ -2,27 +2,28 @@
 	<header class="mdl-layout__header mdl-layout__header--transparent">
 		<div class="mdl-layout__header-row">
 			<!-- Title -->
-			<span class="mdl-layout-title">Title</span>
-			<!-- Add spacer, to align navigation to the right -->
-			<div class="mdl-layout-spacer"></div>
-			<!-- Navigation -->
-			<nav class="mdl-navigation">
-				<a class="mdl-navigation__link" href="">Link</a>
-				<a class="mdl-navigation__link" href="">Link</a>
-				<a class="mdl-navigation__link" href="">Link</a>
-				<a class="mdl-navigation__link" href="">Link</a>
-			</nav>
+			<span class="mdl-layout-title">Genie Solutions</span>
 		</div>
 	</header>
-	<div class="mdl-layout__drawer">
-		<span class="mdl-layout-title">Title</span>
-		<nav class="mdl-navigation">
-			<a class="mdl-navigation__link" href="">Link</a>
-			<a class="mdl-navigation__link" href="">Link</a>
-			<a class="mdl-navigation__link" href="">Link</a>
-			<a class="mdl-navigation__link" href="">Link</a>
-		</nav>
-	</div>
 	<main class="mdl-layout__content">
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--4-col">&nbsp</div>
+			<div class="mdl-cell mdl-cell--4-col">
+				<!-- Upload text file -->
+				<div class="demo-card-square mdl-card mdl-shadow--2dp">
+					<div class="mdl-card__title mdl-card--expand">
+						<h2 class="mdl-card__title-text">Upload</h2>
+					</div>
+					<div class="mdl-card__supporting-text">
+						Upload the input data through a text file. The text file should have a .txt extension
+						and the each graph should be placed on a new line.
+					</div>
+					<div class="mdl-card__actions mdl-card--border">
+						<input type="file" read-file="home.showResults($fileContent)"/>
+					</div>
+				</div>
+			</div>
+			<div class="mdl-cell mdl-cell--4-col">&nbsp</div>
+		</div>
 	</main>
 </div>

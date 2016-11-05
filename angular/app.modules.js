@@ -1,7 +1,8 @@
 (function () {
 	'use strict';
 
-	angular.module('genie', [
-		'ui.router'
-	]);
+	angular
+		.module('genie', [
+			'ui.router'
+		]);
 })();
