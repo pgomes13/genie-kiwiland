@@ -3,6 +3,7 @@
 
 	angular
 		.module('genie', [
-			'ui.router'
+			'ui.router',
+			'ngMaterial'
 		]);
 })();

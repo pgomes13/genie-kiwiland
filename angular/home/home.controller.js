@@ -1,14 +1,14 @@
 (function () {
 	'use strict';
 
-	HomeController.$inject = ['$scope'];
+	HomeController.$inject = ['$mdDialog'];
 
 	angular
 		.module('genie')
 		.controller('HomeController', HomeController);
 
 
-	function HomeController($scope) {
+	function HomeController($mdDialog) {
 		const home = this;
 
 		// initialise the functions when the controller loads
@@ -19,7 +19,18 @@
 		 * @param $fileContent
 		 */
 		function showResults ($fileContent) {
-			home.results = $fileContent;
+			showResultsBar ($fileContent);
+		}
+
+		function showResultsBar (data) {
+			$mdDialog.show({
+				templateUrl: '/assets/templates/results/results.html',
+				controller: 'ResultsController as results',
+				clickOutsideToClose: true,
+				locals: {
+					Results: data
+				}
+			});
 		}
 
 		return home;
