@@ -1,4 +1,5 @@
 node_modules
-assets/components
-assets/css/*.css
-assets/js/*.js
+app/assets/components
+app/assets/css/*.css
+app/assets/js/*.js
+.idea/workspace.xml
