@@ -2,7 +2,6 @@ var path = require('path');
 var gulp = require('gulp');
 var conf = require('./conf');
 var util = require('gulp-util');
-var runSequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
 
 
@@ -10,7 +9,24 @@ var browserSync = require('browser-sync').create();
 gulp.task('server', function () {
 	var baseDir = '';
 
-	if (util.env.dev) {
-		baseDir = '.'
+	if (conf.isDev) {
+		baseDir = conf.paths.app;
+	} else {
+		baseDir = conf.paths.build;
+	}
+
+	browserSync.init({
+		server: {
+			baseDir: baseDir
+		}
+	})
+
+	if (conf.isDev) {
+		gulp.watch(conf.sources.sass, ['sass']);
+		gulp.watch(conf.sources.angular, ['babel']);
+		gulp.watch(conf.sources.templates, ['templates']);
+		gulp.watch(conf.sources.css).on('change', browserSync.reload);
+		gulp.watch(conf.sources.js).on('change', browserSync.reload);
+		gulp.watch(path.join(conf.paths.assets, '/templates/**/*.html')).on('change', browserSync.reload);
 	}
 });

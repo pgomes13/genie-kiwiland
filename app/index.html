@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="The AngularJS solution template of the Kiwiland problem by Genie Solutions">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+		<title>Genie Solutions</title>
+
+		<!-- build:css /assets/css/vendor.css -->
+		<!-- bower:css -->
+		<link rel="stylesheet" href="/assets/components/material-design-lite/material.min.css">
+		<!-- endinject -->
+		<!-- endbuild -->
+
+		<!-- build:css /assets/css/app.css -->
+		<!-- inject:css -->
+		<link rel="stylesheet" href="/assets/css/app.css">
+		<!-- endinject -->
+		<!-- endbuild -->
+	</head>
+	<body ng-app="genie">
+		<div ui-view="content"></div>
+
+		<!-- build:js /assets/js/vendor.js -->
+		<!-- bower:js -->
+		<script src="/assets/components/angular/angular.js"></script>
+		<script src="/assets/components/angular-ui-router/release/angular-ui-router.js"></script>
+		<script src="/assets/components/material-design-lite/material.min.js"></script>
+		<!-- endinject -->
+		<!-- endbuild -->
+
+
+		<!-- build:js /assets/js/app.js -->
+		<!-- inject:js -->
+		<script src="/assets/js/app.js"></script>
+		<!-- endinject -->
+		<!-- endbuild -->
+	</body>
+</html>
