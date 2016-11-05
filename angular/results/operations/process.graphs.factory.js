@@ -69,12 +69,12 @@
 							}
 							// Capture larger paths
 							if (d.name === s.name && count > 0) {
-								for (var node in s.routes.keys()) {
+								for (var node of s.routes.keys()) {
 									traverse(s.routes.get(node).destination, d, path, count);
 								}
 							}
 						} else {
-							for (var node in s.routes.keys()) {
+							for (var node of s.routes.keys()) {
 								traverse(s.routes.get(node).destination, d, path, count);
 							}
 						}
@@ -95,6 +95,8 @@
 		 * @returns {number}
 		 */
 		Graph.prototype.calcDistance = function (path) {
+			var noRouteError = 'NO SUCH ROUTE';
+			
 			if (path && path.match(/^(?:[A-Z]-+)+[A-Z]{1}$/)) {
 				path = path.toUpperCase();
 				var tokens = path.split('-');
@@ -106,7 +108,7 @@
 					if (this.nodes.get(nodeName)) {
 						validNodes.push(this.nodes.get(nodeName));
 					} else {
-						throw new Error('NO SUCH ROUTE.');
+						return noRouteError;
 					}
 				}
 
@@ -117,7 +119,7 @@
 					if (next <= validNodes.length - 1) {
 						// Check if direct path exists
 						if (!validNodes[i].routes.get(validNodes[next].name))
-							throw new Error('NO SUCH ROUTE.')
+							return noRouteError;
 						distance += validNodes[i].routes.get(validNodes[next].name).weight;
 					}
 				}
@@ -131,15 +133,14 @@
 		 * @returns {Map}
 		 */
 		Graph.makeNodes = function (data) {
-			var strNodes = [];
 
 			if (data) {
-				strNodes = OperationsFactory.parseRoutes(data);
+				var strNodes = OperationsFactory.parseRoutes(data);
 			}
 
 			var nodes = new Map();
 
-			for (var r in strNodes) {
+			for (var r of strNodes) {
 				var nameOfNodeA = r[0],
 					nameOfNodeB = r[1];
 				var weight = parseInt(r[2]);

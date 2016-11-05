@@ -19,8 +19,8 @@
 		 * @param $fileContent
 		 */
 		function showResults ($fileContent) {
-			var results = new ResultFactory($fileContent);
-			results.test();
+			var factory = new ResultFactory($fileContent);
+			showResultsBar(factory.test());
 		}
 
 		function showResultsBar (data) {

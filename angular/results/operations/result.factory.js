@@ -27,22 +27,46 @@
 		 * @returns {string}
 		 */
 		Result.prototype.test = function () {
+			var results = [];
+
 			if (this.graph) {
 				if (this.graph.nodes) {
-					// These tests are outlined in the problem
-					console.log(this.calcDistance('A-B-C'));
-					console.log(this.calcDistance('A-D'));
-					console.log(this.calcDistance('A-D-C'));
-					console.log(this.calcDistance('A-E-B-C-D'));
-					console.log(this.calcDistance('A-E-D'));
-					console.log(this.calcNumberOfPossibleRoutesWithStops('C-C', '<=', '3'));
-					console.log(this.calcNumberOfPossibleRoutesWithStops('A-C', '==', '4'));
-					console.log(this.calcShortestRoute('A-C'));
-					console.log(this.calcShortestRoute('B-B'));
-					console.log(this.calcNumberOfPossibleRoutesWithDistance('C-C', '<', '30'));
+					results.push(
+						{
+							test: 1,
+							result: this.calcDistance('A-B-C')
+						}, {
+							test: 2,
+							result: this.calcDistance('A-D')
+						}, {
+							test: 3,
+							result: this.calcDistance('A-D-C')
+						}, {
+							test: 4,
+							result: this.calcDistance('A-E-B-C-D')
+						}, {
+							test: 5,
+							result: this.calcDistance('A-E-D')
+						}, {
+							test: 6,
+							result: this.calcNumberOfPossibleRoutesWithStops('C-C', '<=', '3')
+						}, {
+							test: 7,
+							result: this.calcNumberOfPossibleRoutesWithStops('A-C', '==', '4')
+						}, {
+							test: 8,
+							result: this.calcShortestRoute('A-C')
+						}, {
+							test: 9,
+							result: this.calcShortestRoute('B-B')
+						}, {
+							test: 10,
+							result: this.calcNumberOfPossibleRoutesWithDistance('C-C', '<', '30')
+						}
+					);
 				}
 			}
-			return ''; // Return nothing
+			return results;
 		};
 
 		/**
@@ -52,13 +76,7 @@
 		 */
 		Result.prototype.calcDistance = function (path) {
 			if (path) {
-				var distance;
-				try {
-					distance = this.graph.calcDistance(path);
-				} catch (err) {
-					return err;
-				}
-				return distance;
+				return this.graph.calcDistance(path);
 			}
 		};
 
