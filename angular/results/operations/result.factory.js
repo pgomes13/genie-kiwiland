@@ -135,7 +135,7 @@
 					var validRoutes = new Array();
 					var allRoutes = this.graph.getAllPaths(nodes[0], nodes[1], stops);
 
-					for (var route in allRoutes.keys()) {
+					for (var route of allRoutes.keys()) {
 						// Length
 						var l = route.length;
 
@@ -166,7 +166,7 @@
 				var nodes = OperationsFactory.tokenizeNodes(path);
 				if (nodes.length === 2) {
 					var allRoutes = this.graph.getAllPaths(nodes[0], nodes[1], stops);
-					for (var route in allRoutes.values()) {
+					for (var route of allRoutes.values()) {
 						if (!shortestDistance) {
 							shortestDistance = route;
 						} else if (route < shortestDistance)
@@ -191,7 +191,7 @@
 					var validRoutes = new Array();
 					// Max 10 for our sample data
 					var allRoutes = this.graph.getAllPaths(nodes[0], nodes[1], 10);
-					for (var route in allRoutes.keys()) {
+					for (var route of allRoutes.keys()) {
 						// Distance
 						var d = allRoutes.get(route);
 
