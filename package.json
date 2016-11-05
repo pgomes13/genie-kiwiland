@@ -1,0 +1,28 @@
+{
+  "name": "genie-kiwiland",
+  "version": "1.0.0",
+  "description": "An AngularJS solution of the Kiwiland problem by Genie Solutions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pgomes13/genie-kiwiland.git"
+  },
+  "keywords": [
+    "Genie",
+    "solutions",
+    "Brisbane"
+  ],
+  "author": "Pascoal Gomes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pgomes13/genie-kiwiland/issues"
+  },
+  "homepage": "https://github.com/pgomes13/genie-kiwiland#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "require-dir": "^0.3.1"
+  }
+}

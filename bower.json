@@ -1,0 +1,26 @@
+{
+  "name": "genie-kiwiland",
+  "description": "An AngularJS solution of the Kiwiland problem by Genie Solutions",
+  "main": "index.js",
+  "authors": [
+    "Pascoal Gomes"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Genie",
+    "solutions",
+    "Brisbane"
+  ],
+  "homepage": "https://github.com/pgomes13/genie-kiwiland",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}
