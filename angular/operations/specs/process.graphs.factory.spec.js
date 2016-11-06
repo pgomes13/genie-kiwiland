@@ -4,6 +4,7 @@
 	describe('Process Graphs Factory', function () {
 		var processGraphsFactory;
 		var testData = 'AB5,BC4,CD8,DC8,DE6,AD5,CE2,EB3,AE7';
+		var graph = null;
 
 		beforeEach(module('genie'));
 
@@ -11,12 +12,18 @@
 			processGraphsFactory = $injector.get('ProcessGraphsFactory');
 		}));
 
+		beforeEach(function() {
+			graph = new processGraphsFactory(testData);
+		});
+		afterEach(function() {
+			graph = null;
+		});
+
 		it('ProcessGraphsFactory is defined', function () {
 			expect(processGraphsFactory).toBeDefined();
 		});
 
 		it('Build valid graph from input data string', function (done) {
-			var graph = new processGraphsFactory(testData);
 			expect(graph.nodes.get('A')).not.toBe(undefined);
 			expect(graph.nodes.get('A')).not.toBe(undefined);
 			expect(graph.nodes.get('B')).not.toBe(undefined);
@@ -36,7 +43,6 @@
 		});
 
 		it('Calculates distance of a defined path', function (done) {
-			var graph = new processGraphsFactory(testData);
 			expect(graph.calcDistance('A-B-C')).toBe(5 + 4);
 			expect(graph.calcDistance('A-D')).toBe(5);
 			expect(graph.calcDistance('A-E-B-C-D')).toBe(7 + 3 + 4 + 8);

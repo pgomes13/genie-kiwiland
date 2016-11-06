@@ -5,7 +5,7 @@
 
 		var scope, controller;
 
-		
+		var testData = 'AB5,BC4,CD8,DC8,DE6,AD5,CE2,EB3,AE7';
 		var resultData = [
 			{
 				test: 1,
@@ -42,7 +42,7 @@
 
 		beforeEach(module('genie'));
 
-		beforeEach(inject(function ($rootScope, $controller, $injector) {
+		beforeEach(inject(function ($rootScope, $controller) {
 			scope = $rootScope.$new();
 			controller = $controller('HomeController as home', {
 				$scope: scope
@@ -53,7 +53,10 @@
 			expect(controller).toBeDefined();
 		});
 		
-		
+		it('Uploading the input text file returns the output of the input string', function () {
+			scope.home.showResults(testData);
+			expect(scope.home.resultFactory.test()).toEqual(resultData);
+		});
 	});
 })();
 
