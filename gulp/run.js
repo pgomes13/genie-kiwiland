@@ -7,6 +7,7 @@ var runSequence = require('run-sequence');
 
 gulp.task('run', function (done) {
 	runSequence(
+		'sass',
 		'inject',
 		'server',
 		done

@@ -9,7 +9,7 @@
 
 
 	function ResultsController(Results) {
-		const results = this;
+		var results = this;
 
 		results.display = Results;
 

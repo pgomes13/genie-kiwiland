@@ -19,7 +19,8 @@ exports.paths = {
 exports.sources = {
 	angular: [
 		exports.paths.angular + '/app.modules.js',
-		exports.paths.angular + '/**/*.js'
+		exports.paths.angular + '/**/*.js',
+		'!' + exports.paths.angular + '/**/specs/*.spec.js'
 	],
 	sass: [
 		exports.paths.sass + '/*.scss',

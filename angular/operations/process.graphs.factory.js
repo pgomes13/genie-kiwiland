@@ -1,5 +1,4 @@
 (function () {
-	'use strict';
 
 	ProcessGraphsFactory.$inject = ['OperationsFactory', 'NodeFactory', 'RouteFactory'];
 

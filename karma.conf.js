@@ -15,6 +15,8 @@ module.exports = function (config) {
 
 		// list of files / patterns to load in the browser
 		files: [
+			'node_modules/babel-polyfill/dist/polyfill.js',
+			'node_modules/karma-babel-preprocessor/node_modules/babel-core/browser-polyfill.js',
 			// bower:js
 			"app/assets/components/angular/angular.js",
 			"app/assets/components/angular-ui-router/release/angular-ui-router.js",
@@ -27,7 +29,7 @@ module.exports = function (config) {
 			// endinject
 
 			'app/assets/js/*.js',
-			'specs/*.spec.js'
+			'angular/**/specs/*.spec.js'
 		],
 
 
@@ -38,9 +40,9 @@ module.exports = function (config) {
 		// preprocess matching files before serving them to the browser
 		// available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
 		preprocessors: {
-			'app/assets/js/*.js': ['coverage']
+			'app/assets/js/*.js': ['babel'],
+			'angular/**/specs/*.spec.js': ['babel']
 		},
-
 
 		// test results reporter to use
 		// possible values: 'dots', 'progress'
@@ -77,7 +79,8 @@ module.exports = function (config) {
 			'karma-jasmine',
 			'karma-coverage',
 			'karma-phantomjs-launcher',
-			'karma-spec-reporter'
+			'karma-spec-reporter',
+			'karma-babel-preprocessor'
 		],
 
 		// Continuous Integration mode
