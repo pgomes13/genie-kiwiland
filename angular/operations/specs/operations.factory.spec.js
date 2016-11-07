@@ -19,7 +19,7 @@
 
 		});
 
-		it('RouteFactory is defined', function () {
+		it('OperationsFactory is defined', function () {
 			expect(operationsFactory).toBeDefined();
 		});
 
