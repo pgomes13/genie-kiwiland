@@ -17,8 +17,6 @@ This is an AngularJS codebase that provides solution for the Genie Kiwiland prob
 * [Jasmine] - Behavior-Driven Javascript
 * [Browsersync] - Time-saving synchronised browser testing
 
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen.
-
 [AngularJS]: <http://angularjs.org>
 [Gulp]: <http://gulpjs.com>
 [MDL]: <https://getmdl.io/>
