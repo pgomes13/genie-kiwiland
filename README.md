@@ -49,6 +49,10 @@ All assets in the build folder have been minified & asset revisioned for product
 npm run build
 ```
 
+### Input File
+A sample input.txt file is present in the root directory.
+
+
 ## Tests
 Following command will run the unit tests using PhantomJS.
 
