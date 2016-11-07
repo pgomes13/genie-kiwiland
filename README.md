@@ -56,7 +56,7 @@ npm test
 ```
 
 ## Contributors
-Pascoal Gomes(https://au.linkedin.com/in/pascoal-gomes-a4835954)
+[Pascoal Gomes](https://au.linkedin.com/in/pascoal-gomes-a4835954)
 
 
 ## Licence
