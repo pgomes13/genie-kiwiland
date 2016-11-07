@@ -38,10 +38,10 @@ gulp.task('babel', ['templates'], function () {
 				return true;
 			}
 		}))
-		.pipe(gulpIf(conf.isDev, sourcemaps.init()))
+		.pipe(gulpIf(conf.isDev(), sourcemaps.init()))
 		.pipe(concat('app.js'))
 		.pipe(replace("\"app\/", "\"\/app\/"))
-		.pipe(gulpIf(conf.isDev, sourcemaps.write()))
+		.pipe(gulpIf(conf.isDev(), sourcemaps.write()))
 		.pipe(gulp.dest(path.join(conf.paths.assets, '/js')))
 		.on('end', function () {
 			if (!hasErr) {

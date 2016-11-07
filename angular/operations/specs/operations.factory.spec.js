@@ -1,48 +1,59 @@
 (function () {
 	'use strict';
 
-	describe('Route Factory', function () {
-		var nodeFactory, routeFactory;
-		var destination = null;
-		var weight = 5;
+	describe('Operations Factory', function () {
+		var operationsFactory;
+		var testData = 'AB5,BC4,CD8,DC8,DE6,AD5,CE2,EB3,AE7';
+		var testDataArray = ['AB5', 'BC4', 'CD8', 'DC8', 'DE6', 'AD5', 'CE2', 'EB3', 'AE7'];
 
 		beforeEach(module('genie'));
 
 		beforeEach(inject(function ($injector) {
-			nodeFactory = $injector.get('NodeFactory');
-			routeFactory = $injector.get('RouteFactory');
+			operationsFactory = $injector.get('OperationsFactory');
 		}));
 
 		beforeEach(function() {
-			destination = new nodeFactory('A');
+
 		});
 		afterEach(function() {
-			destination = null;
+
 		});
 
 		it('RouteFactory is defined', function () {
-			expect(routeFactory).toBeDefined();
+			expect(operationsFactory).toBeDefined();
 		});
 
-		it('Creates a Route with end-point destination Node and weight', function(done) {
-			var route = new routeFactory(destination, weight);
-			expect(route.destination).not.toBe(undefined);
-			expect(route.destination).toBe(destination);
-			expect(route.weight).toBe(weight);
+		it('Parses data and extracts routes, returning array of string routes', function(done) {
+			var routes = operationsFactory.parseRoutes(testData);
+			expect(routes.length).toBe(9);
+			expect(typeof routes[0]).toBe('string');
+			expect(typeof routes[1]).toBe('string');
+			expect(typeof routes[2]).toBe('string');
+			expect(typeof routes[3]).toBe('string');
+			expect(typeof routes[4]).toBe('string');
+			expect(typeof routes[5]).toBe('string');
+			expect(typeof routes[6]).toBe('string');
+			expect(typeof routes[7]).toBe('string');
+			expect(typeof routes[8]).toBe('string');
+			expect(routes[0]).toBe(testDataArray[0]);
+			expect(routes[1]).toBe(testDataArray[1]);
+			expect(routes[2]).toBe(testDataArray[2]);
+			expect(routes[3]).toBe(testDataArray[3]);
+			expect(routes[4]).toBe(testDataArray[4]);
+			expect(routes[5]).toBe(testDataArray[5]);
+			expect(routes[6]).toBe(testDataArray[6]);
+			expect(routes[7]).toBe(testDataArray[7]);
+			expect(routes[8]).toBe(testDataArray[8]);
 			done();
 		});
 
-		it('Sets end-point destination Node and weight for this Route', function(done) {
-			var route = new routeFactory(destination, weight);
-			expect(route.destination).not.toBe(undefined);
-			expect(route.destination).toBe(destination);
-			expect(route.weight).toBe(weight);
-			var newDestination = new nodeFactory('B');
-			var newWeight = 9;
-			route.set(newDestination, newWeight);
-			expect(route.destination).not.toBe(undefined);
-			expect(route.destination).toBe(newDestination);
-			expect(route.weight).toBe(newWeight);
+		it('Extracts nodes from path tokenized by "-"', function(done) {
+			var nodes = operationsFactory.tokenizeNodes('A-C');
+			expect(nodes.length).toBe(2);
+			expect(typeof nodes[0]).toBe('string');
+			expect(typeof nodes[1]).toBe('string');
+			expect(nodes[0]).toBe('A');
+			expect(nodes[1]).toBe('C');
 			done();
 		});
 

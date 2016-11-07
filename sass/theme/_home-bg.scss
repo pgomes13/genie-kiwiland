@@ -1,6 +1,12 @@
-.demo-layout-transparent {
-  background: url('#{$images-path}/background/home-banner.png') center / cover;
+body {
+  background: url('#{$images-path}/background/home-banner.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
+.demo-layout-transparent {
   .mdl-layout__header, .mdl-layout__drawer-button {
     color: white;
   }
