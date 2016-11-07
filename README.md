@@ -10,6 +10,7 @@ This is an AngularJS codebase that provides solution for the Genie Kiwiland prob
 * [Bower] - A package manager for the web
 * [Gulp] - The streaming build system
 * [MDL] - Google Material Design look & feel 
+* [Angular Material] - Angular UI Component framework for Google Material Design
 * [Sass] - Syntactically Awesome Style Sheets
 * [Babel] - The compiler for writing next generation JavaScript
 * [Git] - Distributed version control system
@@ -70,6 +71,7 @@ MIT
 [AngularJS]: <http://angularjs.org>
 [Gulp]: <http://gulpjs.com>
 [MDL]: <https://getmdl.io/>
+[Angular Material]: <https://material.angularjs.org>
 [node.js]: <http://nodejs.org>
 [Bower]: https://bower.io/
 [npm]: https://www.npmjs.com/
