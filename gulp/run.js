@@ -1,14 +1,21 @@
 'use strict';
 
 var gulp = require('gulp');
-var path = require('path');
 var conf = require('./conf');
 var runSequence = require('run-sequence');
 
-gulp.task('run', function (done) {
-	runSequence(
-		'inject',
-		'server',
-		done
-	)
+gulp.task('run:dev', function (done) {
+  runSequence(
+    'inject',
+    'server:dev',
+    done
+  )
+});
+
+gulp.task('run:prod', function (done) {
+  runSequence(
+    'build',
+    'server:prod',
+    done
+  )
 });

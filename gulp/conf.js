@@ -9,7 +9,6 @@ var util = require('gulp-util');
 exports.paths = {
 	root:'./',
 	build: './.build',
-	tmp: './.tmp',
 	app: './app',
 	angular: './angular',
 	sass: './sass',
@@ -19,7 +18,8 @@ exports.paths = {
 exports.sources = {
 	angular: [
 		exports.paths.angular + '/app.modules.js',
-		exports.paths.angular + '/**/*.js'
+		exports.paths.angular + '/**/*.js',
+		'!' + exports.paths.angular + '/**/specs/*.spec.js'
 	],
 	sass: [
 		exports.paths.sass + '/*.scss',

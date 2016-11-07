@@ -6,6 +6,7 @@
  */
 var gulp = require('gulp');
 var requireDir = require('require-dir');
+var conf = require('./gulp/conf');
 
 /** Require all tasks in gulp/tasks,
  * including sub folders
@@ -17,5 +18,10 @@ requireDir('./gulp', {recurse: true});
  *  main optimization build task
  */
 gulp.task('default', function () {
-	gulp.start('run');
+	if(conf.isDev()) {
+		gulp.start('run:dev');
+	} else {
+		gulp.start('run:prod');
+	}
+
 });

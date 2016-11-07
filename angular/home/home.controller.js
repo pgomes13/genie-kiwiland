@@ -9,7 +9,7 @@
 
 
 	function HomeController($mdDialog, ResultFactory) {
-		const home = this;
+		var home = this;
 
 		// initialise the functions when the controller loads
 		home.showResults = showResults;
@@ -19,8 +19,8 @@
 		 * @param $fileContent
 		 */
 		function showResults ($fileContent) {
-			var factory = new ResultFactory($fileContent);
-			showResultsBar(factory.test());
+			home.resultFactory = new ResultFactory($fileContent);
+			showResultsBar(home.resultFactory.test());
 		}
 
 		function showResultsBar (data) {
