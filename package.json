@@ -4,8 +4,8 @@
   "description": "An AngularJS solution of the Kiwiland problem by Genie Solutions",
   "main": "index.js",
   "scripts": {
-    "dev": "gulp --dev",
-    "prod": "gulp",
+    "dev": "gulp run:dev",
+    "prod": "gulp run:prod",
     "build": "gulp build",
     "test": "gulp test"
   },

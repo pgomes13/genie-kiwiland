@@ -14,8 +14,7 @@ var conf = require('./gulp/conf');
 requireDir('./gulp', {recurse: true});
 
 /**
- *  Default task clean temporaries directories and launch the
- *  main optimization build task
+ *  Run the dev/prod task as per env
  */
 gulp.task('default', function () {
 	if(conf.isDev()) {

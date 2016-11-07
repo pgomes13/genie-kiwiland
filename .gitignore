@@ -4,4 +4,4 @@ app/assets/css/*.css
 app/assets/js/*.js
 .idea/*.*
 coverage
-./build
+./build/

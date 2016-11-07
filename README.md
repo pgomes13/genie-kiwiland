@@ -31,25 +31,26 @@ $ bower install
 The app will serve & watch for development changes.
 
 ```sh
-npm dev
+npm run dev
 ```
 
 ### Production environment 
 The app will build & serve the production build.
 
 ```sh
-npm prod
+npm run prod
 ```
 
 ### Production Build 
 The app is ready for production deployment in ./build folder in the root directory.
+All assets in the build folder have been minified & asset revisioned for production release.
 
 ```sh
-npm build
+npm run build
 ```
 
 ## Tests
-Following command will run the unit tests.
+Following command will run the unit tests using PhantomJS.
 
 ```sh
 npm test
