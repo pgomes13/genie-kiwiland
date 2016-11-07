@@ -17,6 +17,34 @@ This is an AngularJS codebase that provides solution for the Genie Kiwiland prob
 * [Jasmine] - Behavior-Driven Javascript
 * [Browsersync] - Time-saving synchronised browser testing
 
+## Installation
+Download or clone this repository on your local machine. 
+
+Install the dependencies by running the following commands
+
+```sh
+$ npm install
+$ bower install
+```
+
+For development environment
+
+```sh
+gulp --dev
+```
+
+For production environment
+
+```sh
+gulp
+```
+
+To build the app for production (the app is ready for production deployment in ./build folder in the root directory)
+
+``sh
+gulp build
+```sh
+
 [AngularJS]: <http://angularjs.org>
 [Gulp]: <http://gulpjs.com>
 [MDL]: <https://getmdl.io/>
