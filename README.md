@@ -20,30 +20,47 @@ This is an AngularJS codebase that provides solution for the Genie Kiwiland prob
 ## Installation
 Download or clone this repository on your local machine. 
 
-Install the dependencies by running the following commands
+Install the dependencies by running the following commands in the root directory.
 
 ```sh
 $ npm install
 $ bower install
 ```
 
-For development environment
+### Development environment 
+The app will serve & watch for development changes.
 
 ```sh
 gulp --dev
 ```
 
-For production environment
+### Production environment 
+The app will build & serve the production build.
 
 ```sh
 gulp
 ```
 
-To build the app for production (the app is ready for production deployment in ./build folder in the root directory)
+### Production Build 
+The app is ready for production deployment in ./build folder in the root directory.
 
-``sh
-gulp build
 ```sh
+npm build
+```
+
+## Tests
+Following command will run the unit tests.
+
+```sh
+npm test
+```
+
+## Contributors
+Pascoal Gomes(https://au.linkedin.com/in/pascoal-gomes-a4835954)
+
+
+## Licence
+MIT
 
 [AngularJS]: <http://angularjs.org>
 [Gulp]: <http://gulpjs.com>
