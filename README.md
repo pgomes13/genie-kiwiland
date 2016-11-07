@@ -31,14 +31,14 @@ $ bower install
 The app will serve & watch for development changes.
 
 ```sh
-gulp --dev
+npm dev
 ```
 
 ### Production environment 
 The app will build & serve the production build.
 
 ```sh
-gulp
+npm prod
 ```
 
 ### Production Build 
